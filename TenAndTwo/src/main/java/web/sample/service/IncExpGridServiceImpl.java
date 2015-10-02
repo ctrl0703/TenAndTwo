@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 
 import web.sample.dao.IncExpDao;
 
-@Service("GridService")
+@Service("IncExpGridServiceImpl")
 public class IncExpGridServiceImpl implements GridService {
 	Logger log = Logger.getLogger(this.getClass());
 	
