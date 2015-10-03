@@ -22,6 +22,10 @@ public class IncExpDao extends AbstractDAO {
 			String limit = (String) map.get("rows");
 			String sidx = (String) map.get("sidx");
 			String sord = (String) map.get("sord");
+			log.debug("page : " + page);
+			log.debug("rows : " + limit);
+			log.debug("sidx : " + sidx);
+			log.debug("sord : " + sord);
 			
 			if(sidx == null) {
 				sidx = "1";

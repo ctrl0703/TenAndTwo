@@ -5,14 +5,15 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import web.sample.service.GridService;
 
 @Controller
@@ -33,7 +34,8 @@ public class IncExpController {
 	}
 
 	@RequestMapping(value="/IncExp/getGridList.do")
-	public JSONObject getGridList(Map<String, Object> commandMap) throws Exception {
+	@ResponseBody
+	public JSONObject getGridList(@RequestParam Map<String, Object> commandMap) throws Exception {
 		ArrayList<Map<String, Object>> mapList = (ArrayList<Map<String, Object>>) incExpService.selectList(commandMap);
 		JSONObject jsonObject = new JSONObject();
 		JSONArray jsonArray = new JSONArray();
@@ -54,6 +56,7 @@ public class IncExpController {
 		jsonObject.put("page", commandMap.get("page"));
 		jsonObject.put("total", commandMap.get("total"));
 		jsonObject.put("records", commandMap.get("records"));
+				
 		return jsonObject;
 	}
 }
