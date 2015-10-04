@@ -1,0 +1,12 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#grid-div {
+	width: 100%;
+}
+
+#grid-div table {
+    font-size: 70%;
+}
