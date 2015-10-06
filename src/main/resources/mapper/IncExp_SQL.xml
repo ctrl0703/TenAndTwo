@@ -7,6 +7,7 @@
 		SELECT *
 		  FROM (  SELECT ROWIDTOCHAR(ROWID) RID,
 		                 ROWNUM RNUM,
+		                 'N' ROWSTAT,
 		                 (SUBSTR(REPORT_DATE, 1, 4) || '-' || SUBSTR(REPORT_DATE, 5, 2) || '-' || SUBSTR(REPORT_DATE, 7, 2)) REPORT_DATE,
 		                 CATEGORY1,
 		                 CATEGORY2,
