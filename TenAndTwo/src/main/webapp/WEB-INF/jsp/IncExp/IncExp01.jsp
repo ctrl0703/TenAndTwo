@@ -30,11 +30,12 @@ $(function() {
         datatype: "json",
         mtype: "GET",
         width:$("#grid-div").width(),
+//        height:300,
         colNames: ["RID", "ROWSTAT", "일자", "분류1", "분류2", "내역", "입금", "입금자", "출금", "출금자", "입출금방식", "입력자", "입력일", "수정자", "수정일"],
         colModel: [
-                { name: "RID", hidden: false},
-       			{ name: "ROWSTAT", hidden: false},
-       			{ name: "REPORT_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: false },
+                { name: "RID", hidden: true},
+       			{ name: "ROWSTAT", hidden: true},
+       			{ name: "REPORT_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: false, formatter: "date", formatoptions:{srcformat: 'Y-m-d', newformat: 'Y-m-d'} },
     			{ name: "CATEGORY1", width: 50, align:"center", sortable: true, editable: false, hidden: false },
     			{ name: "CATEGORY2", width: 50, align:"center", sortable: true, editable: false, hidden: false },
     			{ name: "REPORT_DESC", width: 200, align:"center", sortable: true, editable: false, hidden: false },
@@ -43,10 +44,10 @@ $(function() {
     			{ name: "EXPENSE", width: 60, align:"center", sortable: true, editable: false, hidden: false },
     			{ name: "EXPENSER", width: 60, align:"center", sortable: true, editable: false, hidden: false },
     			{ name: "INOUT_METHOD", width: 50, align:"center", sortable: true, editable: false, hidden: false },
-    			{ name: "INST_USER", width: 60, align:"center", sortable: true, editable: false, hidden: false },
-    			{ name: "INST_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: false },
-    			{ name: "UPD_USER", width: 60, align:"center", sortable: true, editable: false, hidden: false },
-    			{ name: "UPD_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: false }
+    			{ name: "INST_USER", width: 60, align:"center", sortable: true, editable: false, hidden: true },
+    			{ name: "INST_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: true, formatter: "date", formatoptions:{srcformat: 'Y-m-d', newformat: 'Y-m-d'} },
+    			{ name: "UPD_USER", width: 60, align:"center", sortable: true, editable: false, hidden: true },
+    			{ name: "UPD_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: true, formatter: "date", formatoptions:{srcformat: 'Y-m-d', newformat: 'Y-m-d'} }
         ],
         pager: "#pager",
         rowNum: 10,
@@ -68,6 +69,40 @@ $(function() {
     
     $( window ).resize(function() {
     	$("#list").jqGrid("setGridWidth", $("#grid-div").width(), true);
+    });
+    
+    $("#pager_left").addClass("resizeBar");
+    $("#pager_right").addClass("resizeBar");
+    var state = "idle";
+    $(".resizeBar").hover(
+    		function() { 
+    			$(this).css("cursor", "n-resize");
+    			state = "resizable";
+    			//console.log(state);
+    		}, 
+    		function() { 
+    			state = ((state == "resize") ? "resize" : "idle"); 
+    			//console.log(state);
+    		}
+    );
+    
+    $(".resizeBar").mousedown( function() {
+    	state = ((state == "resizable") ? "resize" : "idle"); 
+    	//console.log(state); 
+    });
+    
+    $("body").mousemove( function(e) { 
+    	if(state == "resize") {
+    		state = "resize";
+    		$("#list").jqGrid("setGridHeight",e.pageY-160, false);
+    	} 
+    });
+    
+    $("body").mouseup( function() {
+    	if(state == "resize") {
+    		state = "idle";
+    		//console.log(state); 
+    	} 
     });
 });
 </script>
