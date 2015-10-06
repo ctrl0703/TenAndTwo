@@ -30,8 +30,10 @@ $(function() {
         datatype: "json",
         mtype: "GET",
         width:$("#grid-div").width(),
-        colNames: ["일자", "분류1", "분류2", "내역", "입금", "입금자", "출금", "출금자", "입출금방식", "입력자", "입력일", "수정자", "수정일"],
+        colNames: ["RID", "ROWSTAT", "일자", "분류1", "분류2", "내역", "입금", "입금자", "출금", "출금자", "입출금방식", "입력자", "입력일", "수정자", "수정일"],
         colModel: [
+                { name: "RID", hidden: false},
+       			{ name: "ROWSTAT", hidden: false},
        			{ name: "REPORT_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: false },
     			{ name: "CATEGORY1", width: 50, align:"center", sortable: true, editable: false, hidden: false },
     			{ name: "CATEGORY2", width: 50, align:"center", sortable: true, editable: false, hidden: false },
@@ -57,6 +59,12 @@ $(function() {
         caption: "입출금내역",
 	 	loadError: function(xhr,status,error) { alert('서버와의 통신에 실패하였습니다.'); }
     });
+    $("#list").jqGrid('bindKeys', {'scrollingRows':true });
+	$("#list").bind("jqGridBeforeSaveCell", function (e, rowid, cellname, value, iRow, iCol) {
+	 	if($("#list").getCell(rowid, "ROWSTAT") != "I") {
+	 		$("#list").jqGrid('setRowData', rowid, {ROWSTAT:'U'}, {background:"#FFFFFF"});
+	 	}
+	});
     
     $( window ).resize(function() {
     	$("#list").jqGrid("setGridWidth", $("#grid-div").width(), true);

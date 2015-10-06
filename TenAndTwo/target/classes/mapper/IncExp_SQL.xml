@@ -4,20 +4,26 @@
 <mapper namespace="IncExp">
 	<select id="selectList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[
-		SELECT  REPORT_DATE
-		      , CATEGORY1
-		      , CATEGORY2
-		      , REPORT_DESC
-		      , INCOME
-		      , INCOMER
-		      , EXPENSE
-		      , EXPENSER
-		      , INOUT_METHOD
-		      , INST_USER
-		      , INST_DATE
-		      , UPD_USER
-		      , UPD_DATE
-		FROM INCOME_EXPENSE_REPORT
+		SELECT *
+		  FROM (  SELECT ROWIDTOCHAR(ROWID) RID,
+		                 ROWNUM RNUM,
+		                 'N' ROWSTAT,
+		                 (SUBSTR(REPORT_DATE, 1, 4) || '-' || SUBSTR(REPORT_DATE, 5, 2) || '-' || SUBSTR(REPORT_DATE, 7, 2)) REPORT_DATE,
+		                 CATEGORY1,
+		                 CATEGORY2,
+		                 REPORT_DESC,
+		                 INCOME,
+		                 INCOMER,
+		                 EXPENSE,
+		                 EXPENSER,
+		                 INOUT_METHOD,
+		                 INST_USER,
+		                 TO_CHAR(INST_DATE, 'YYYY-MM-DD') INST_DATE,
+		                 UPD_USER,
+		                 TO_CHAR(UPD_DATE, 'YYYY-MM-DD') UPD_DATE
+		            FROM INCOME_EXPENSE_REPORT
+		        ORDER BY ${sidx} ${sord}) a
+		 WHERE a.RNUM BETWEEN #{start} AND #{limit}
 		]]>
 	</select>
 	
