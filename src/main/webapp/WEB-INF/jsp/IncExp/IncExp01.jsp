@@ -30,7 +30,7 @@ $(function() {
         datatype: "json",
         mtype: "GET",
         width:$("#grid-div").width(),
-//        height:300,
+        height:340,
         colNames: ["RID", "ROWSTAT", "일자", "분류1", "분류2", "내역", "입금", "입금자", "출금", "출금자", "입출금방식", "입력자", "입력일", "수정자", "수정일"],
         colModel: [
                 { name: "RID", hidden: true},
@@ -50,8 +50,8 @@ $(function() {
     			{ name: "UPD_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: true, formatter: "date", formatoptions:{srcformat: 'Y-m-d', newformat: 'Y-m-d'} }
         ],
         pager: "#pager",
-        rowNum: 10,
-        rowList: [10, 20, 30],
+        rowNum: 15,
+        rowList: [15, 50, 100],
         sortname: "REPORT_DATE",
         sortorder: "asc",
         viewrecords: true,
@@ -71,6 +71,8 @@ $(function() {
     	$("#list").jqGrid("setGridWidth", $("#grid-div").width(), true);
     });
     
+    
+    /* grid resize bar
     $("#pager_left").addClass("resizeBar");
     $("#pager_right").addClass("resizeBar");
     var state = "idle";
@@ -104,6 +106,7 @@ $(function() {
     		//console.log(state); 
     	} 
     });
+    */
 });
 </script>
 </html>

@@ -8,5 +8,9 @@ html, body {
 }
 
 #grid-div table {
-    font-size: 70%;
+    font-size: 100%;
+}
+
+.ui-widget {
+	font-family: Dotum,'Gulim',Helvetica,AppleSDGothicNeo,sans-serif;;
 }
