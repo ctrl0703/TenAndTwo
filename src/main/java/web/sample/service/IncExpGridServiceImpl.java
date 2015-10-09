@@ -18,8 +18,12 @@ public class IncExpGridServiceImpl implements GridService {
 	private IncExpDao incExpDao;
 	
 	@Override
+	public List<Map<String, Object>> selectGridList(Map<String, Object> map) throws Exception {
+		return incExpDao.selectIncExpGrid(map);
+	}
+
 	public List<Map<String, Object>> selectList(Map<String, Object> map) throws Exception {
-		return incExpDao.selectIncExp(map);
+		return incExpDao.selectList(map);
 	}
 
 }

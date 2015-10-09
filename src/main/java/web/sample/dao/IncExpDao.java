@@ -12,7 +12,7 @@ import web.common.dao.AbstractDAO;
 public class IncExpDao extends AbstractDAO {
 	
 	@SuppressWarnings("unchecked")
-	public List<Map<String, Object>> selectIncExp(Map<String, Object> map) throws Exception{
+	public List<Map<String, Object>> selectIncExpGrid(Map<String, Object> map) throws Exception{
 		List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
 		String namespace = (String) map.get("namespace");
 		String queryName = (String) map.get("queryName");
@@ -58,6 +58,22 @@ public class IncExpDao extends AbstractDAO {
 			throw new RuntimeException(e);
 		}
     	
+		return result;
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> selectList(Map<String, Object> map) throws Exception{
+		List<Map<String, Object>> result = new ArrayList<Map<String, Object>>();
+		String namespace = (String) map.get("namespace");
+		String queryName = (String) map.get("queryName");
+
+		try {
+			result = selectList(namespace + "." + queryName, map);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+		
 		return result;
 	}
 }
