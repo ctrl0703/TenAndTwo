@@ -96,6 +96,7 @@
 		                                                                                                ,        TO_CHAR(SYSDATE, 'YYYY') + 1 || '02')
 		AND INCOMER IN (SELECT NAME FROM MEMBER_MT)
 		GROUP BY INCOMER
+		ORDER BY NAME ASC
 		]]>
 	</select>
 </mapper>
