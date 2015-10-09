@@ -1,0 +1,220 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>열하고둘에 관하여</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="resources/plugin/startbootstrap-business-casual-1.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="resources/plugin/startbootstrap-business-casual-1.0.0/css/business-casual.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <jsp:include page="share/menu.jsp"/>
+
+    <div class="container">
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">열하고둘의 유래
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-10">
+	                <p>
+	                열하고둘은 초창기 덕소 서정학원 출신 20대 초반의 대학생들이 함께 MT를 도모하면서 시작되었다.<br>
+	                정확한 연도는 알 수 없으나 첫 덕소 단체 여행 당시에는 정형화된 규칙도, 정식 멤버도 존재하지 않았다. 
+	                그저 얼굴 알고 같은 학원 다녔거나 같은 반이었거나 여타 대학 친구들처럼 같이 술마시고 노는 MT를 가고싶었을 뿐이었다.<br> 
+	                이렇던 성격을 가진 그들이 대천 여행, 김광민 입대 위로 여행을 거치면서 지금과 같은 멤버로 굳혀지기 시작하였다. 
+	                이 멤버들은 2007년 대구를 시작으로 입대를 하기 시작하였고, 몇명은 군복무로, 몇명은 개인적인 생활로 예전과 같이 전부가 자주 모이기는 점점 힘들어졌고, 
+	                비슷한 목적으로 맥주 한강 그리고 간지라는 카페도 만들고 활동을 했지만 이 역시 많은 한계를 갖고있었다.<br>
+	                이미 몇차례의 여행으로 이러한 모임의 장단점과 한계를 명확히 확인한 몇몇 멤버들은 모임을 좀 더 구체화 시켜 조금더 오래 지속될 수 있는 모임을 구상하였다. 
+	                이에 상당 수가 이미 군복무 중이던 2010년 가을, 아직 입대를 하지 않았거나, 
+	                이미 전역을 한 몇명의 주도로 회칙을 정하고 멤버를 확정하였고, 나머지 멤버들이 전역을 하여 여행을 주제로 오늘과 같은 모임으로 발전하게 되었다.
+	                </p>
+                </div>
+                <div class="col-lg-1">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">열하고둘 멤버
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>김광민
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>김길훈
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>김진웅
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                 <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>사공도영
+                        <small>88. 12. 31</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>이대수
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>이유진
+                        <small>88. 8. 5</small>
+                    </h3>
+                </div>
+                 <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>이창희
+                        <small>88. 7. 3</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>이해준
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>임용수
+                        <small>88. 3. 1</small>
+                    </h3>
+                </div>
+                 <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>장석원
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+                    <h3>정현수
+                        <small>Job Title</small>
+                    </h3>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">열하고둘 회칙
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                	<div align="center"><h3>열 하고 둘<br>화백회의(畵伯回議)</h3></div>
+                	<div align="right">
+                	[ver1] 작성자 : 임용수, 김광민, 정현수<br>
+					작성시간 : 2010.10.06 22:00 ~ 2010.10.07 03:30<br>
+					[ver2] 작성자 : 이해준<br>
+					작성시간 : 2010.10.11 13:00 ~ 2010.10.11 14:00<br>
+					[ver3]  작성자 : 김광민, 임용수<br>
+					작성시간 : 2010.11.19 18:00 ~ 2010.11.20 23:00<br>
+                	</div>
+                   <p><strong>1. 명칭</strong><br>2011초 최대인원이 모인 자리에서 결정한다.</p>
+                   <p><strong>2. 목적</strong><br>조직구성원의 친목도모와 동시에 개인의 다양한 가치관의 소통을 목적으로 한다. 소통이란 개인의 가치관을 나눌 수 있는 직간접적인 모든 활동을 포함한다.</p>
+                   <p>
+                   		<strong>3. 조직구성(회원)</strong><br>
+                   		<strong>회원</strong> : 회원은 우선 초창기 맴버(12명)을 기준으로 한다. 인사상의 변동사항이 있을 때는 앞서 언급한 회원들의 만장일치를 전제로 한다.<br>
+						<strong>임원</strong> : 임원은 회원 중에 한 사람으로 단기간의 임기를 부여받은 사람이다. 임원은 총무와 부총무 2명으로 나뉜다.<br>
+						<strong>총무</strong> : 총무는 회원 중에서 선출된 사람이다. 이 사람은 한 시즌의 활동에 대해서 책임감을 갖고 주체적인 역할을 한다.<br>
+						<strong>부총무</strong> : 부총무는 해당 임기의 시작과함께 총무가 지명한 사람이다. 부총무는 총무의 의견을 대변함과 동시에 총무에게 선순환적 피드백(feedback)을 제공한다.
+                   </p>
+                   <p>
+                   		<strong>4. 조직규칙</strong><br>
+                   		<strong>[역할]<br></strong>
+						<strong>-회원</strong><br>
+						회원은 회의와 함께 활동의 주체자로 적극적인 참여를 한다.<br>
+						회원은 총무에게 언제나 의견을 표출할 수 있다.<br>
+						회원은 회의에 경조사와 준하는 행사가 없을 시에는 반드시 참석한다.<br>
+						회원은 조직의 일원으로 회비의 납부에 대해서 지장없도록 한다.<br>
+						<strong>-총무</strong><br>
+						▶총무는 해당 시즌에 모든 계획을 총괄한다.<br>
+						▶총무는 선출 후 8(2달)주안에 활동계획에 대한 최초보고(간단한 주제와 목적)를 한다. (그 방법은 인터넷 홈페이지를 통한다.)<br>
+						▶총무는 두 번째 보고는 12(3달)주안에 한다. 보고내용에는 일정, 재정적 지출을 포함한다.<br>
+						▶총무는 두 번째 보고 후 그 주 주말에 회원모임을 갖는다. 회원모임에서는 개인 회원에 대한 피드백을 받는다. (+α술)<br>
+						▶총무는 계획 진행 7일전에 최종적인 보고를 한다. 이 보고 안에는 여행에서 즉각적으로 나올 비용을 제외한 모든 계획이 들어가야 한다.<br>
+						▶총무는 회원들이 통과시킨 계획의 재정지출은 허가 없이 사용할 수 있다. 하지만 그 이외의 어떠한 사항에 대해서도 자신의 임의대로 지출을 할 수 없다.<br>
+						<strong>-부총무</strong><br>
+						▶부총무는 매월 회비에 대한 모든 책임과 관리를 위임한다.<br>
+						▶부총무는 총무를 대신해서 재정 지출에 대한 모든 일을 총괄한다.<br>
+						▶부총무는 총무의 계획이 진행되고 7일 전에 재정지출에 대한 보고를 인터넷에 올리도록 한다.<br>
+						▶부총무는 그 어떠한 일이 있어도 사적인 감정이 들어간 재정 지출이 있을 시에는 그에 2배에 해당하는 금액을 회비로 내도록 한다.<br>
+						<strong>[재정]</strong><br>
+						조직의 회비는 매월 1만원으로 한다. 이 금액은 회원의 만장일치에 의해 변동가능하다.<br>
+						재정지출은 총무의 계획에 따라서 진행하지만 부총무의 허가 안에서 실질적인 재정지출이 이루어지도록 한다.<br>
+						<strong>[제명]</strong><br>
+						제명은 만장일치다.<br>
+						<strong>[탈퇴/재가입]</strong><br>
+						탈퇴/재가입은 만장일치다.<br>
+                   </p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <jsp:include page="share/bottom.jsp"/>
+
+    <!-- jQuery -->
+    <script src="resources/plugin/startbootstrap-business-casual-1.0.0/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/plugin/startbootstrap-business-casual-1.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
