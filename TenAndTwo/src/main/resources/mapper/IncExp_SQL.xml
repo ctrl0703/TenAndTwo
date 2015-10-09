@@ -82,4 +82,20 @@
 		    )
 		]]>
 	</insert>
+	
+	<select id="getMembershipFee" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+		SELECT INCOMER NAME, SUM(INCOME) / 10000 COUNT
+		FROM INCOME_EXPENSE_REPORT
+		WHERE CATEGORY1 = 'IN002'
+		AND REPORT_DATE BETWEEN DECODE(TO_CHAR(SYSDATE, 'MM'), '01', TO_CHAR(SYSDATE, 'YYYY') - 1 || '03'
+		                                                                                                , '02', TO_CHAR(SYSDATE, 'YYYY') - 1 || '03'
+		                                                                                                ,        TO_CHAR(SYSDATE, 'YYYY')  || '03') 
+		                                     AND DECODE(TO_CHAR(SYSDATE, 'MM'), '01', TO_CHAR(SYSDATE, 'YYYY') || '02' 
+		                                                                                                , '02', TO_CHAR(SYSDATE, 'YYYY') || '02' 
+		                                                                                                ,        TO_CHAR(SYSDATE, 'YYYY') + 1 || '02')
+		AND INCOMER IN (SELECT NAME FROM MEMBER_MT)
+		GROUP BY INCOMER
+		]]>
+	</select>
 </mapper>
