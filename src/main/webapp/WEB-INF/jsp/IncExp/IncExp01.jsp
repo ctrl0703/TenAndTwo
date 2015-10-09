@@ -3,6 +3,7 @@
 <%@ page session="false" %>
 <html>
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>IncomeExpense</title>
 <link rel="stylesheet" type="text/css" media="screen" href="../resources/plugin/jquery-ui-themes-1.11.2/themes/redmond/jquery-ui.min.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="../resources/plugin/jquery.jqGrid-4.6.0/css/ui.jqgrid.css" />
@@ -30,7 +31,7 @@ $(function() {
         datatype: "json",
         mtype: "GET",
         width:$("#grid-div").width(),
-        height:340,
+        height:330,
         colNames: ["RID", "ROWSTAT", "일자", "분류1", "분류2", "내역", "입금", "입금자", "출금", "출금자", "입출금방식", "입력자", "입력일", "수정자", "수정일"],
         colModel: [
                 { name: "RID", hidden: true},
