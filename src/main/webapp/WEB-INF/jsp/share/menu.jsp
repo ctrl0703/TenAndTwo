@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-                <a class="navbar-brand" href="index.do">열하고둘</a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath }/index.do">열하고둘</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

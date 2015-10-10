@@ -30,7 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=d9e328670bf1beb319b2aa1d9d732211eb2dfc8c"></script>
+	<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=507d68fd913eb2b2de1b5f7073e10450b58218b3"></script>
 	<!-- 개발용 map api key : 507d68fd913eb2b2de1b5f7073e10450b58218b3 -->
 	<!-- 배포용 map api key : d9e328670bf1beb319b2aa1d9d732211eb2dfc8c -->
 </head>
