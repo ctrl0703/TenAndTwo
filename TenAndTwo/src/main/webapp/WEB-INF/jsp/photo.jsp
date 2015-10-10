@@ -25,6 +25,26 @@
     <link href="resources/plugin/GridGallery/css/component.css" rel="stylesheet">
 	<script src="resources/plugin/GridGallery/js/modernizr.custom.js"></script>
 	
+	<style>
+		.slideshow .inner_div {
+			width: 100%;
+			height: 100%;
+	   		position: relative;
+		}
+		.slideshow .inner_div img {
+			max-height: 100%;  
+			max-width: 100%; 
+			width: auto;
+			height: auto;
+			position: absolute;  
+			top: 0;  
+			bottom: 0;  
+			left: 0;  
+			right: 0;  
+			margin: auto;
+		}
+	</style>
+	
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
@@ -73,7 +93,9 @@
 										<c:forEach items="${list }" var="data">
 											<li>
 												<figure>
-													<img src="http://ctrl0703.iptime.org/PhotoThum/${dir }/${data }"/>
+													<a href="http://ctrl0703.iptime.org/TenAndTwo/Photo/${dir }/${data }" onclick="window.open(this.href);return false;" target="_blank">
+														<img src="http://ctrl0703.iptime.org/TenAndTwo/PhotoThum/${dir }/${data }" alt="썸네일이 없습니다."/>
+													</a>
 												</figure>
 											</li>
 										</c:forEach>
@@ -81,12 +103,15 @@
 								</section><!-- // grid-wrap -->
 								<section class="slideshow">
 									<ul>
+								
 									<c:forEach items="${list }" var="data">
 										<li>
 											<figure>
-												<a href="http://ctrl0703.iptime.org/Photo/${dir }/${data }" onclick="window.open(this.href);return false;" target="_blank">
-													<img src="http://ctrl0703.iptime.org/PhotoMid/${dir }/${data }"/>
-												</a>
+												<div class="inner_div">
+													<a href="http://ctrl0703.iptime.org/TenAndTwo/Photo/${dir }/${data }" onclick="window.open(this.href);return false;" target="_blank">
+														<img src="http://ctrl0703.iptime.org/TenAndTwo/PhotoMid/${dir }/${data }"/>
+													</a>
+												</div>
 											</figure>
 										</li>
 									</c:forEach>
@@ -97,7 +122,7 @@
 										<span class="icon nav-close"></span>
 									</nav>
 									<div class="info-keys icon">Navigate with arrow keys</div>
-								</section> -->
+								</section>
 							</div><!-- // grid-gallery -->
 						</c:otherwise>                	
                 	</c:choose>
