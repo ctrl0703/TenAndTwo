@@ -113,8 +113,7 @@
 						<div class="cd-timeline-content" id="video-player">
 							<h2>대구 1대100 출연</h2>
 							<video controls width="100%">
-								<source src="resources/etc/M_20120404200401565806681004.mp4" type="video/quicktime">
-								<source src="resources/etc/M_20120404200401565806681004.mp4" type="video/mp4">
+								<source src="http://ctrl0703.iptime.org/TenAndTwo/MovieClip/M_20120404200401565806681004.mp4" type="video/mp4">
 							</video>
 							<p>대구 중앙대 이유진으로 1대100 출연, 최후의 2인에 올랐으나 아쉽게 마지막 문제에서 탈락 상금을 놓침 </p>
 							<span class="cd-date">2012년 4월 3일(화)</span>
@@ -129,7 +128,7 @@
 						<div class="cd-timeline-content">
 							<h2>장진탕 오기</h2>
 							<video controls width="100%">
-								<source src="resources/etc/M_20120823000801602071961004.mp4" type="video/mp4">
+								<source src="http://ctrl0703.iptime.org/TenAndTwo/MovieClip/M_20120823000801602071961004.mp4" type="video/mp4">
 							</video>
 							<p>[장진탕]오기 영상'임용수와 어깰 나란히'에 이은'소주 없어갖고 존나 빡칠거같애'</p>
 							<span class="cd-date">2012년 8월 19일(토)</span>

@@ -17,6 +17,9 @@
 
     <!-- Custom CSS -->
     <link href="${pageContext.request.contextPath }/resources/plugin/startbootstrap-business-casual-1.0.0/css/business-casual.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link href="${pageContext.request.contextPath }/resources/plugin/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -32,10 +35,21 @@
     <style type="text/css">
     	#title:link, #title:visited { color: #fff; text-decoration: none; }
     	#title:hover { text-decoration: underline; }
+    	.brand { position: relative; }
+    	#loginBtn {
+			position: absolute;
+			right:0;
+			top:0;
+			margin:10px;
+			font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+		}
     </style>
 </head>
 <body>
-    <div class="brand"><a id="title" href='${pageContext.request.contextPath }/index.do'>열하고둘</a></div>
+    <div class="brand">
+    	<a id="title" href='${pageContext.request.contextPath }/index.do'>열하고둘</a>
+		<button type="button" id="loginBtn" class="btn btn-default loginBtn"><!-- <i class="fa fa-user"></i> --><b>LOGIN</b></button>
+    </div>
     <div class="address-bar">덕소 | 친구 | 여행</div>
 
     <!-- Navigation -->
@@ -49,6 +63,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <button type="button" class="btn btn-default navbar-toggle loginBtn"><!-- <i class="fa fa-user"></i> --><b>LOGIN</b></button>
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
                 <a class="navbar-brand" href="${pageContext.request.contextPath }/index.do">열하고둘</a>
             </div>
@@ -60,6 +75,9 @@
 			        </li>
 			        <li>
 			            <a href="${pageContext.request.contextPath }/photo.do">사진</a>
+			        </li>
+			        <li>
+			            <a href="${pageContext.request.contextPath }/movieClip.do">동영상</a>
 			        </li>
 			        <li>
 			            <a href="${pageContext.request.contextPath }/travel.do">여행</a>
@@ -79,5 +97,15 @@
         </div>
         <!-- /.container -->
     </nav>
+
+    <!-- jQuery -->
+    <script src="resources/plugin/startbootstrap-business-casual-1.0.0/js/jquery.js"></script>
 </body>
+<script type="text/javascript">
+$(function() {
+	$(".loginBtn").click(function() {
+		location.href="${pageContext.request.contextPath }/loginPage.do";
+	});
+});
+</script>
 </html>

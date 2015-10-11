@@ -19,7 +19,35 @@
 
     <!-- Custom CSS -->
     <link href="resources/plugin/startbootstrap-business-casual-1.0.0/css/business-casual.css" rel="stylesheet">
-    	
+    
+    <!-- google-grid-gallery CSS -->
+    <link href="resources/plugin/GridGallery/css/demo.css" rel="stylesheet">
+    <link href="resources/plugin/GridGallery/css/component.css" rel="stylesheet">
+	<script src="resources/plugin/GridGallery/js/modernizr.custom.js"></script>
+	
+	<style type="text/css">
+		#grid-gallery {
+			margin-top: 150px;
+		}
+		.slideshow .inner_div {
+			width: 100%;
+			height: 100%;
+	   		position: relative;
+		}
+		.slideshow .inner_div img {
+			max-height: 100%;  
+			max-width: 100%; 
+			width: auto;
+			height: auto;
+			position: absolute;  
+			top: 0;  
+			bottom: 0;  
+			left: 0;  
+			right: 0;  
+			margin: auto;
+		}
+	</style>
+	
     <!-- Fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
@@ -30,21 +58,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-	<style type="text/css">
-		.free-wall {
-			margin:30px;
-			margin-top: 100px;
-		}
-		.brick {
-			width: 200px;
-		}
-		.brick img {
-			margin: 0px;
-			padding: 0px;
-			display: block;
-		}
-	</style>
 
 </head>
 
@@ -56,7 +69,7 @@
 
         <div class="row">
             <div class="box">
-                <div class="col-lg-12" id="page_title">
+                <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">우리들의 사진
                     </h2>
@@ -74,18 +87,44 @@
 	                		<div class="col-lg-12 text-center">
 	                			<p>경로 : ${dir }</p>
 	                		</div>
-                			<!-- 사진이 들어갈 자리 -->
-							<div id="freewall" class="free-wall">
-								<div id="for_ceter">
-	                				<c:forEach items="${list }" var="data">
-									    <div class="brick">
-									    	<a href="http://ctrl0703.iptime.org/TenAndTwo/Photo/${dir }/${data }" onclick="window.open(this.href);return false;" target="_blank">
-									    		<img src="http://ctrl0703.iptime.org/TenAndTwo/PhotoThum/${dir }/${data }" alt="썸네일이 없습니다."/>
-											</a>
-									    </div>
-	                				</c:forEach>
-                				</div>
-                			</div>
+							<div id="grid-gallery" class="grid-gallery">
+								<section class="grid-wrap">
+									<ul class="grid">
+										<li class="grid-sizer"></li><!-- for Masonry column width -->
+										<c:forEach items="${list }" var="data">
+											<li>
+												<figure>
+													<a href="http://ctrl0703.iptime.org/TenAndTwo/Photo/${dir }/${data }" onclick="window.open(this.href);return false;" target="_blank">
+														<img src="http://ctrl0703.iptime.org/TenAndTwo/PhotoMid/${dir }/${data }" alt="썸네일이 없습니다."/>
+													</a>
+												</figure>
+											</li>
+										</c:forEach>
+									</ul>
+								</section><!-- // grid-wrap -->
+								<section class="slideshow">
+									<ul>
+								<!-- 
+									<c:forEach items="${list }" var="data">
+										<li>
+											<figure>
+												<div class="inner_div">
+													<a href="http://ctrl0703.iptime.org/TenAndTwo/Photo/${dir }/${data }" onclick="window.open(this.href);return false;" target="_blank">
+														<img src="http://ctrl0703.iptime.org/TenAndTwo/PhotoMid/${dir }/${data }"/>
+													</a>
+												</div>
+											</figure>
+										</li>
+									</c:forEach> -->
+									</ul><!-- 
+									<nav>
+										<span class="icon nav-prev"></span>
+										<span class="icon nav-next"></span>
+										<span class="icon nav-close"></span>
+									</nav>
+									<div class="info-keys icon">Navigate with arrow keys</div> -->
+								</section>
+							</div><!-- // grid-gallery -->
 						</c:otherwise>                	
                 	</c:choose>
             </div>
@@ -101,27 +140,18 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="resources/plugin/startbootstrap-business-casual-1.0.0/js/bootstrap.min.js"></script>
-    
-    <!-- freewall -->
-    <script src="resources/js/freewall.min.js"></script>
 	
+	<!-- google-grid-gallery -->
+	<script src="resources/plugin/GridGallery/js/imagesloaded.pkgd.min.js"></script>
+	<script src="resources/plugin/GridGallery/js/masonry.pkgd.min.js"></script>
+	<script src="resources/plugin/GridGallery/js/classie.js"></script>
+	<script src="resources/plugin/GridGallery/js/cbpGridGallery.js"></script>
+	<script>
+		new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+	</script>
 </body>
 <script type="text/javascript">
 $(function() {
-	var wall = new Freewall("#freewall");
-	wall.reset({
-		selector: '.brick',
-		animate: true,
-		cellW: 200,
-		cellH: 'auto',
-		onResize: function() {
-			wall.fitWidth();
-		}
-	});
-	
-	wall.container.find('.brick img').load(function() {
-		wall.fitWidth();
-	});
 });
 </script>
 </html>

@@ -33,9 +33,6 @@
 
 	<!-- full calendar plugin -->
 	<link rel='stylesheet' href='resources/plugin/fullcalendar-2.2.3/fullcalendar.css' />
-	<script src='resources/plugin/fullcalendar-2.2.3/lib/jquery.min.js'></script>
-	<script src='resources/plugin/fullcalendar-2.2.3/lib/moment.min.js'></script>
-	<script src='resources/plugin/fullcalendar-2.2.3/fullcalendar.js'></script>
 </head>
 
 <body>
@@ -63,6 +60,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="resources/plugin/startbootstrap-business-casual-1.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- full Calendar -->
+	<script src='resources/plugin/fullcalendar-2.2.3/lib/jquery.min.js'></script>
+	<script src='resources/plugin/fullcalendar-2.2.3/lib/moment.min.js'></script>
+	<script src='resources/plugin/fullcalendar-2.2.3/fullcalendar.js'></script>
 
 </body>
 <script>
