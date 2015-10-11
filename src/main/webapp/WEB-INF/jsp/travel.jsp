@@ -33,6 +33,21 @@
 	<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=507d68fd913eb2b2de1b5f7073e10450b58218b3"></script>
 	<!-- 개발용 map api key : 507d68fd913eb2b2de1b5f7073e10450b58218b3 -->
 	<!-- 배포용 map api key : d9e328670bf1beb319b2aa1d9d732211eb2dfc8c -->
+	
+	<style type="text/css">
+		.trav_desc {
+			position: relative;
+			padding-bottom: 100px;
+		}
+		.trav_desc_btn {
+			position: absolute;
+			right:0;
+			bottom:0;
+		}
+		.trav_desc_btn a {
+			margin-left: 10px;
+		}
+	</style>
 </head>
 
 <body>
@@ -68,13 +83,17 @@
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/DSC_0087.JPG" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 9회차</p>
                 	<p>장소 : 용문</p>
                 	<p>회장 : 정현수, 이창희</p>
                 	<p>참석자 : 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 김길훈, 사공, 정현수, 이창희, 임용수</p>
                 	<p>불참자 : 없음</p>
                 	<p>사건 : 어게인 양평</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -89,13 +108,17 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 8회차</p>
                 	<p>장소 : 안면도</p>
                 	<p>회장 : 이대수, 대구</p>
                 	<p>참석자 : 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 김길훈, 사공, 정현수, 이창희</p>
                 	<p>불참자 : 임용수</p>
                 	<p>사건 : 스파</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/DSC_00872.JPG" alt="">
@@ -116,13 +139,17 @@
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/IMG_1371.JPG" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 7회차</p>
                 	<p>장소 : 단양</p>
                 	<p>회장 : 김광민, 김진웅</p>
                 	<p>참석자 : 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 김길훈, 사공, 정현수, 이창희</p>
                 	<p>불참자 : 임용수</p>
                 	<p>사건 : 수중 체육대회</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -137,13 +164,17 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 6회차</p>
                 	<p>장소 : 화천 산천어 축제</p>
                 	<p>회장 : 김길훈, 장석원 </p>
                 	<p>참석자 : 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 김길훈, 사공, 이창희</p>
                 	<p>불참자 : 채민성, 임용수, 정현수</p>
                 	<p>사건 :  드립상 수상, 사공 낚시 0마리</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/DSC_0193.JPG" alt="">
@@ -164,13 +195,17 @@
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/201308.jpg" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 5회차</p>
                 	<p>장소 : 강화도 해오름 펜션</p>
                 	<p>회장 : 대구, 이창희</p>
                 	<p>참석자 : 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 김길훈, 사공, 이창희, 채민성</p>
                 	<p>불참자 : 임용수, 정현수</p>
                 	<p>사건 : 전야제 사건</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -185,13 +220,17 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 4회차</p>
                 	<p>장소 : 정선 펜션</p>
                 	<p>회장 : 사공, 정현수</p>
                 	<p>참석자 : 장석원, 이대수, 김광민, 김진웅, 이해준, 사공, 장석원, 정현수, 채민성, 임용수</p>
                 	<p>불참자 : 대구(혼자 내일로 여행), 김길훈</p>
                 	<p>사건 : 광자 스와핑, 현토 </p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="col-md-6">
                 </div>
@@ -211,13 +250,17 @@
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/1345280341659.jpg" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 3회차</p>
                 	<p>장소 : 철원 한탄강 펜션</p>
                 	<p>회장 : 김진웅, 이해준</p>
                 	<p>참석자 : 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 사공, 채민성, 이창희, 정현수</p>
                 	<p>불참자 : 임용수, 김길훈</p>
                 	<p>사건 : 장진탕 사건</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -232,13 +275,17 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 2회차</p>
                 	<p>장소 : 속초 코레스코 콘도</p>
                 	<p>회장 : 장석원, 이대수</p>
                 	<p>참석자 : 임용수, 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 사공, 이창희, 정현수</p>
                 	<p>불참자 : 김길훈(성당), 채민성(군대)</p>
                 	<p>사건 : 장쫄보이, 강원대 삼척캠</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/IMG_9446.jpg" alt="">
@@ -259,13 +306,17 @@
                 <div class="col-md-6">
                     <img class="img-responsive img-border-left" src="resources/img/photo/IMG_8130.jpg" alt="">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 trav_desc">
                 	<p>회차 : 1회차</p>
                 	<p>장소 : 양평 들마루 펜션</p>
                 	<p>회장 : 임용수, 김광민</p>
                 	<p>참석자 : 임용수, 장석원, 이대수, 김광민, 김진웅, 이해준, 대구, 김길훈, 사공, 정현수</p>
                 	<p>불참자 : 이창희(군대), 채민성(군대)</p>
                 	<p>사건 : 맥주파티, 카나페</p>
+                	
+                	<div class="trav_desc_btn">
+                		<a>계획</a><a>결과</a><a>후기</a>
+                	</div>
                 </div>
                 <div class="clearfix"></div>
             </div>

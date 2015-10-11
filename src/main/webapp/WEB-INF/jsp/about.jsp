@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 
@@ -49,7 +50,7 @@
                 <div class="col-lg-1">
                 </div>
                 <div class="col-lg-10">
-	                <p>
+	                <p><!-- 
 	                열하고둘은 초창기 덕소 서정학원 출신 20대 초반의 대학생들이 함께 MT를 도모하면서 시작되었다.<br>
 	                정확한 연도는 알 수 없으나 첫 덕소 단체 여행 당시에는 정형화된 규칙도, 정식 멤버도 존재하지 않았다. 
 	                그저 얼굴 알고 같은 학원 다녔거나 같은 반이었거나 여타 대학 친구들처럼 같이 술마시고 노는 MT를 가고싶었을 뿐이었다.<br> 
@@ -59,7 +60,7 @@
 	                이미 몇차례의 여행으로 이러한 모임의 장단점과 한계를 명확히 확인한 몇몇 멤버들은 모임을 좀 더 구체화 시켜 조금더 오래 지속될 수 있는 모임을 구상하였다. 
 	                이에 상당 수가 이미 군복무 중이던 2010년 가을, 아직 입대를 하지 않았거나, 
 	                이미 전역을 한 몇명의 주도로 회칙을 정하고 멤버를 확정하였고, 나머지 멤버들이 전역을 하여 여행을 주제로 오늘과 같은 모임으로 발전하게 되었다.
-	                </p>
+	                 --></p>
                 </div>
                 <div class="col-lg-1">
                 </div>
@@ -74,72 +75,14 @@
                     </h2>
                     <hr>
                 </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>김광민
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>김길훈
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>김진웅
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>사공도영
-                        <small>88. 12. 31</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>이대수
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>이유진
-                        <small>88. 8. 5</small>
-                    </h3>
-                </div>
-                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>이창희
-                        <small>88. 7. 3</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>이해준
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>임용수
-                        <small>88. 3. 1</small>
-                    </h3>
-                </div>
-                 <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>장석원
-                        <small>Job Title</small>
-                    </h3>
-                </div>
-                <div class="col-sm-4 text-center">
-                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                    <h3>정현수
-                        <small>Job Title</small>
-                    </h3>
-                </div>
+                <c:forEach items="${list }" var="member">
+	                <div class="col-sm-4 text-center">
+	                    <img class="img-responsive" src="http://placehold.it/750x450" alt="">
+	                    <h3>${member.NAME }
+	                        <small>${fn:substring(member.BIRTHDAY, 2, 4) }. ${fn:substring(member.BIRTHDAY, 4, 6) }. ${fn:substring(member.BIRTHDAY, 6, 8) }</small>
+	                    </h3>
+	                </div>
+                </c:forEach>
                 <div class="clearfix"></div>
             </div>
         </div>

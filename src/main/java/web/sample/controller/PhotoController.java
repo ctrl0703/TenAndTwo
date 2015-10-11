@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class PhotoController {
 	Logger log = Logger.getLogger(this.getClass());
 	//final String basePath = "/var/www/html/TenAndTwo/Photo";
-	final String basePath = "E:/Photo";
+	final String basePath = "E:/TenAndTwo/Photo";
 
 	@RequestMapping(value="/photo.do")
 	public ModelAndView openPhoto(@RequestParam Map<String, Object> commandMap) throws Exception {

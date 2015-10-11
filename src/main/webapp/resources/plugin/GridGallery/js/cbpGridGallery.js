@@ -101,14 +101,14 @@
 		// open the slideshow when clicking on the main grid items
 		this.gridItems.forEach( function( item, idx ) {
 			item.addEventListener( 'click', function() {
-				self._openSlideshow( idx );
+				//self._openSlideshow( idx );
 			} );
 		} );
 
 		// slideshow controls
-		this.ctrlPrev.addEventListener( 'click', function() { self._navigate( 'prev' ); } );
-		this.ctrlNext.addEventListener( 'click', function() { self._navigate( 'next' ); } );
-		this.ctrlClose.addEventListener( 'click', function() { self._closeSlideshow(); } );
+		//this.ctrlPrev.addEventListener( 'click', function() { self._navigate( 'prev' ); } );
+		//this.ctrlNext.addEventListener( 'click', function() { self._navigate( 'next' ); } );
+		//this.ctrlClose.addEventListener( 'click', function() { self._closeSlideshow(); } );
 
 		// window resize
 		window.addEventListener( 'resize', function() { self._resizeHandler(); } );
