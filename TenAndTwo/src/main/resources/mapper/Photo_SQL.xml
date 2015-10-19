@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Photo">
+	<select id="selectPhotoList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+		SELECT p.PHOTO_NO
+		     , p.PHOTO_NAME
+		     , p.PHOTO_PATH
+		     , t.PHOTO_TAG_NO
+		     , t.PHOTO_TAG_NAME
+		     , t.PHOTO_TAG_DESC
+		     , TO_CHAR(p.INSERT_DATE, 'YYYYMMDD') INSERT_DATE
+		FROM PHOTO p, PHOTO_TAG_REL r, PHOTO_TAG_MST t
+		WHERE p.PHOTO_NO = r.PHOTO_NO
+		AND r.PHOTO_TAG_NO = t.PHOTO_TAG_NO
+		AND (#{tag, jdbcType=NUMERIC} IS NULL OR r.PHOTO_TAG_NO = #{tag, jdbcType=NUMERIC})
+		ORDER BY p.INSERT_DATE ASC, p.PHOTO_NO ASC
+		]]>
+	</select>
+	
+	<select id="selectPhotoTag" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+		SELECT PHOTO_TAG_NO, PHOTO_TAG_NAME, PHOTO_TAG_DESC
+		FROM PHOTO_TAG_MST
+		ORDER BY PHOTO_TAG_NO
+		]]>
+	</select>
+</mapper>

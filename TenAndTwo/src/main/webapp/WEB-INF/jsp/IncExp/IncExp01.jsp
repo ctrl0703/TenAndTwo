@@ -61,6 +61,26 @@
                 <div class="clearfix"></div>
             </div>
         </div>
+        
+        
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">쇼핑 상세내역
+                    </h2>
+                    <hr>
+                </div>
+                <div class="col-lg-12">
+					<p>여행시 시장거리 상세 내역 (위에서 분류2 중 시장거리를 선택하면 해당 상세내역 조회)</p>
+					<div id="grid-div">
+						<table id="detail_list"><tr><td></td></tr></table> 
+						<div id="detail_pager"></div>
+					</div> 
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
 
 
     </div>
@@ -81,17 +101,18 @@
 
 </body>
 <script type="text/javascript">
-$(function() {
+function loadMasterGrid() {
     $("#list").jqGrid({
         url: "getGridList.do?namespace=IncExp&queryName=selectList",
         datatype: "json",
         mtype: "GET",
         width:$("#grid-div").width(),
         height:330,
-        colNames: ["RID", "ROWSTAT", "일자", "분류1", "분류2", "내역", "입금", "입금자", "출금", "출금자", "입출금방식", "입력자", "입력일", "수정자", "수정일"],
+        colNames: ["RID", "ROWSTAT", "내역번호", "일자", "분류1", "분류2", "내역", "입금", "입금자", "출금", "출금자", "입출금방식", "입력자", "입력일", "수정자", "수정일"],
         colModel: [
                 { name: "RID", hidden: true},
        			{ name: "ROWSTAT", hidden: true},
+       			{ name: "REPORT_NO", hidden: true},
        			{ name: "REPORT_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: false, formatter: "date", formatoptions:{srcformat: 'Y-m-d', newformat: 'Y-m-d'} },
     			{ name: "CATEGORY1", width: 50, align:"center", sortable: true, editable: false, hidden: false },
     			{ name: "CATEGORY2", width: 50, align:"center", sortable: true, editable: false, hidden: false },
@@ -115,6 +136,8 @@ $(function() {
         gridview: true,
         autoencode: true,
         caption: "입출금내역",
+	 	onSelectCell: function(ids) {getDetailGrid(ids);},
+	 	onCellSelect: function(ids) {getDetailGrid(ids);},
 	 	loadError: function(xhr,status,error) { alert('서버와의 통신에 실패하였습니다.'); }
     });
     $("#list").jqGrid('bindKeys', {'scrollingRows':true });
@@ -127,43 +150,68 @@ $(function() {
     $( window ).resize(function() {
     	$("#list").jqGrid("setGridWidth", $("#grid-div").width(), true);
     });
-    
-    
-    /* grid resize bar
-    $("#pager_left").addClass("resizeBar");
-    $("#pager_right").addClass("resizeBar");
-    var state = "idle";
-    $(".resizeBar").hover(
-    		function() { 
-    			$(this).css("cursor", "n-resize");
-    			state = "resizable";
-    			//console.log(state);
-    		}, 
-    		function() { 
-    			state = ((state == "resize") ? "resize" : "idle"); 
-    			//console.log(state);
-    		}
-    );
-    
-    $(".resizeBar").mousedown( function() {
-    	state = ((state == "resizable") ? "resize" : "idle"); 
-    	//console.log(state); 
+}
+
+function loadDetailGrid(url) {
+    $("#detail_list").jqGrid({
+        url: url,
+        datatype: "json",
+        mtype: "POST",
+        width:$("#grid-div").width(),
+        height:330,
+        colNames: ["RID", "ROWSTAT", "제목", "분류", "내역", "출금", "입력자", "입력일", "수정자", "수정일"],
+        colModel: [
+                   { name: "RID", hidden: true},
+                   { name: "ROWSTAT", hidden: true},
+                   { name: "REPORT_NO_NAME", width: 100, align:"center", sortable: true, editable: false, hidden: false },
+                   { name: "CATEGORY", width: 50, align:"center", sortable: true, editable: false, hidden: false },
+                   { name: "REPORT_DESC", width: 200, align:"center", sortable: true, editable: false, hidden: false },
+                   { name: "EXPENSE", width: 60, align:"center", sortable: true, editable: false, hidden: false },
+                   { name: "INST_USER", width: 60, align:"center", sortable: true, editable: false, hidden: true },
+                   { name: "INST_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: true, formatter: "date", formatoptions:{srcformat: 'Y-m-d', newformat: 'Y-m-d'} },
+                   { name: "UPD_USER", width: 60, align:"center", sortable: true, editable: false, hidden: true },
+                   { name: "UPD_DATE", width: 60, align:"center", sortable: true, editable: false, hidden: true, formatter: "date", formatoptions:{srcformat: 'Y-m-d', newformat: 'Y-m-d'} }
+        ],
+        pager: "#detail_pager",
+        rowNum: 15,
+        rowList: [15, 50, 100],
+        sortname: "REPORT_NO",
+        sortorder: "asc",
+        viewrecords: true,
+        gridview: true,
+        autoencode: true,
+        caption: "상세내역",
+	 	loadError: function(xhr,status,error) { alert('서버와의 통신에 실패하였습니다.'); }
     });
+    $("#detail_list").jqGrid('bindKeys', {'scrollingRows':true });
+	$("#detail_list").bind("jqGridBeforeSaveCell", function (e, rowid, cellname, value, iRow, iCol) {
+	 	if($("#detail_list").getCell(rowid, "ROWSTAT") != "I") {
+	 		$("#detail_list").jqGrid('setRowData', rowid, {ROWSTAT:'U'}, {background:"#FFFFFF"});
+	 	}
+	});
     
-    $("body").mousemove( function(e) { 
-    	if(state == "resize") {
-    		state = "resize";
-    		$("#list").jqGrid("setGridHeight",e.pageY-160, false);
-    	} 
+	
+    $( window ).resize(function() {
+    	$("#detail_list").jqGrid("setGridWidth", $("#grid-div").width(), true);
     });
+}
+
+function getDetailGrid(ids) {
+	if(ids == null) {
+		ids = 0;
+		if(jQuery("#detail_list").jqGrid('getGridParam','records') <= 0 ) {
+			return;
+		}
+	}
+
+	jQuery("#detail_list").jqGrid('GridUnload');
+	loadDetailGrid("getGridList.do?namespace=IncExp&queryName=selectDetailList&REPORT_NO=" + $("#list").getCell(ids, "REPORT_NO"));
+}
+$(function() {
+	loadMasterGrid();
+	
+	loadDetailGrid("getGridList.do?namespace=IncExp&queryName=selectDetailList&REPORT_NO=1");
     
-    $("body").mouseup( function() {
-    	if(state == "resize") {
-    		state = "idle";
-    		//console.log(state); 
-    	} 
-    });
-    */
 });
 </script>
 </html>

@@ -11,4 +11,15 @@
 		]]>
 	</select>
 	
+	<select id="selectPresidentList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+		SELECT  ORDER_NUMBER,
+		        PRESIDENT_NAME,
+		        VICE_PRESIDENT_NAME,
+		        START_DATE,
+		        DECODE(END_DATE, '99991231', '~', END_DATE) END_DATE
+		FROM PRESIDENT
+		ORDER BY ORDER_NUMBER ASC
+		]]>
+	</select>
 </mapper>

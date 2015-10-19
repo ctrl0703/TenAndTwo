@@ -9,7 +9,8 @@
 				       ROWNUM RNUM,
 				       'N' ROWSTAT,
 				       orgQuery.*
-				FROM (  SELECT (SUBSTR(REPORT_DATE, 1, 4) || '-' || SUBSTR(REPORT_DATE, 5, 2) || '-' || SUBSTR(REPORT_DATE, 7, 2)) REPORT_DATE,
+				FROM (  SELECT REPORT_NO,
+				               (SUBSTR(REPORT_DATE, 1, 4) || '-' || SUBSTR(REPORT_DATE, 5, 2) || '-' || SUBSTR(REPORT_DATE, 7, 2)) REPORT_DATE,
 		                       (SELECT CODE_NM 
 		                       FROM COMMON_CODE
 		                       WHERE EFF_END_DTM = '99991231235959'
@@ -41,10 +42,46 @@
 		]]>
 	</select>
 	
-	<select id="getCount" parameterType="hashmap" resultType="java.lang.Integer">
+	<select id="selectListCount" parameterType="hashmap" resultType="java.lang.Integer">
 		<![CDATA[
 		SELECT  COUNT(*)
 		FROM INCOME_EXPENSE_REPORT
+		]]>
+	</select>
+	
+	<select id="selectDetailList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[
+		SELECT *
+		FROM  (SELECT ROWIDTOCHAR(ROWID) RID,
+		               ROWNUM RNUM,
+		               'N' ROWSTAT,
+		               orgQuery.*
+		        FROM (  SELECT (SELECT DISTINCT REPORT_DESC FROM INCOME_EXPENSE_REPORT WHERE REPORT_NO = SHOPPING_DETAIL.REPORT_NO) REPORT_NO_NAME, 
+		                       (SELECT CODE_NM 
+		                       FROM COMMON_CODE
+		                       WHERE EFF_END_DTM = '99991231235959'
+		                       AND (CODE_TP = 'EX001')
+		                       AND CODE_CD = CATEGORY) CATEGORY,
+		                       REPORT_DESC,
+		                       EXPENSE,
+		                       INST_USER,
+		                       TO_CHAR(INST_DATE, 'YYYY-MM-DD') INST_DATE,
+		                       UPD_USER,
+		                       TO_CHAR(UPD_DATE, 'YYYY-MM-DD') UPD_DATE
+		                FROM SHOPPING_DETAIL
+		                WHERE 1=1
+		                AND REPORT_NO = #{REPORT_NO}
+		                ORDER BY ${sidx} ${sord}) orgQuery
+		        ) gridQuery
+		WHERE gridQuery.RNUM BETWEEN #{start} AND #{limit}
+		]]>
+	</select>
+	
+	<select id="selectDetailListCount" parameterType="hashmap" resultType="java.lang.Integer">
+		<![CDATA[
+		SELECT COUNT(*)
+		FROM SHOPPING_DETAIL
+		WHERE REPORT_NO = #{REPORT_NO}
 		]]>
 	</select>
 	
