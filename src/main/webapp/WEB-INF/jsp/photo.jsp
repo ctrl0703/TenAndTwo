@@ -76,26 +76,31 @@
                     <hr>
                 </div>
                 	<c:choose>
-						<c:when test="${dir eq null }">
+						<c:when test="${tag eq null }">
                				<div class="col-lg-12">
-			                	<c:forEach items="${list }" var="data">
-			                		<h3>${data }</h3>
+			                	<h3>태그</h3>
+			                	<a href="photo.do?tag=">전체</a><br>
+			                	<c:forEach items="${photoTagList }" var="photoTag">
+			                		<a href="photo.do?tag=${photoTag.PHOTO_TAG_NO }">${photoTag.PHOTO_TAG_NAME }</a><br>
 			                	</c:forEach>
                 			</div>
 						</c:when>
 						<c:otherwise>
 	                		<div class="col-lg-12 text-center">
-	                			<p>경로 : ${dir }</p>
+	                			<c:forEach items="${photoTagList }" var="photoTag">
+	                				<c:if test="${photoTag.PHOTO_TAG_NO eq tag}"><p>태그 : ${photoTag.PHOTO_TAG_NAME }</p></c:if>
+	                			</c:forEach>
+	                			
 	                		</div>
 							<div id="grid-gallery" class="grid-gallery">
 								<section class="grid-wrap">
 									<ul class="grid">
 										<li class="grid-sizer"></li><!-- for Masonry column width -->
-										<c:forEach items="${list }" var="data">
+										<c:forEach items="${photoList }" var="photo">
 											<li>
 												<figure>
-													<a href="http://ctrl0703.iptime.org/TenAndTwo/Photo/${dir }/${data }" onclick="window.open(this.href);return false;" target="_blank">
-														<img src="http://ctrl0703.iptime.org/TenAndTwo/PhotoMid/${dir }/${data }" alt="썸네일이 없습니다."/>
+			                                        <a href="http://ctrl0703.iptime.org/TenAndTwo/Photo/${photo.PHOTO_PATH }/${photo.PHOTO_NAME }" onclick="window.open(this.href);return false;" target="_blank">
+			                                            <img src="http://ctrl0703.iptime.org/TenAndTwo/PhotoMid/${photo.PHOTO_PATH }/${photo.PHOTO_NAME }" alt="썸네일이 없습니다."/>
 													</a>
 												</figure>
 											</li>

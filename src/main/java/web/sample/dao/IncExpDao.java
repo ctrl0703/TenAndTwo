@@ -31,7 +31,7 @@ public class IncExpDao extends AbstractDAO {
 				sidx = "1";
 			}
 			
-			int count = (Integer) selectOne(namespace + ".getCount", map);
+			int count = (Integer) selectOne(namespace + "." + queryName + "Count", map);
 			
 			int total_page = 0;
 			if(count > 0 && Integer.parseInt(limit) > 0) {

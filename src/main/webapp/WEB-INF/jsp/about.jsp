@@ -43,24 +43,30 @@
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">열하고둘의 유래
-                    </h2>
+                    <h2 class="intro-text text-center">역대 회장</h2>
                     <hr>
                 </div>
                 <div class="col-lg-1">
                 </div>
                 <div class="col-lg-10">
-	                <p><!-- 
-	                열하고둘은 초창기 덕소 서정학원 출신 20대 초반의 대학생들이 함께 MT를 도모하면서 시작되었다.<br>
-	                정확한 연도는 알 수 없으나 첫 덕소 단체 여행 당시에는 정형화된 규칙도, 정식 멤버도 존재하지 않았다. 
-	                그저 얼굴 알고 같은 학원 다녔거나 같은 반이었거나 여타 대학 친구들처럼 같이 술마시고 노는 MT를 가고싶었을 뿐이었다.<br> 
-	                이렇던 성격을 가진 그들이 대천 여행, 김광민 입대 위로 여행을 거치면서 지금과 같은 멤버로 굳혀지기 시작하였다. 
-	                이 멤버들은 2007년 대구를 시작으로 입대를 하기 시작하였고, 몇명은 군복무로, 몇명은 개인적인 생활로 예전과 같이 전부가 자주 모이기는 점점 힘들어졌고, 
-	                비슷한 목적으로 맥주 한강 그리고 간지라는 카페도 만들고 활동을 했지만 이 역시 많은 한계를 갖고있었다.<br>
-	                이미 몇차례의 여행으로 이러한 모임의 장단점과 한계를 명확히 확인한 몇몇 멤버들은 모임을 좀 더 구체화 시켜 조금더 오래 지속될 수 있는 모임을 구상하였다. 
-	                이에 상당 수가 이미 군복무 중이던 2010년 가을, 아직 입대를 하지 않았거나, 
-	                이미 전역을 한 몇명의 주도로 회칙을 정하고 멤버를 확정하였고, 나머지 멤버들이 전역을 하여 여행을 주제로 오늘과 같은 모임으로 발전하게 되었다.
-	                 --></p>
+                	<table class="table table-bordered">
+                		<tr>
+                			<th>순서</th>
+                			<th>회장</th>
+                			<th>부회장</th>
+                			<th>시작</th>
+                			<th>종료</th>
+                		</tr>
+                		<c:forEach items="${presidentList }" var="president">
+                			<tr>
+                				<td>${president.ORDER_NUMBER }대</td>
+                				<td>${president.PRESIDENT_NAME }</td>
+                				<td>${president.VICE_PRESIDENT_NAME }</td>
+                				<td>${president.START_DATE }</td>
+                				<td>${president.END_DATE }</td>
+                			</tr>
+                		</c:forEach>
+                	</table>
                 </div>
                 <div class="col-lg-1">
                 </div>

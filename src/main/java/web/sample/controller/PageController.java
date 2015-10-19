@@ -30,8 +30,12 @@ public class PageController {
 		
 		@SuppressWarnings("unchecked")
 		ArrayList<Map<String, String>> list = (ArrayList<Map<String, String>>) memberDao.selectList("Member.selectList");
+
+		@SuppressWarnings("unchecked")
+		ArrayList<Map<String, String>> presidentList = (ArrayList<Map<String, String>>) memberDao.selectList("Member.selectPresidentList");
 		
 		mv.addObject("list", list);
+		mv.addObject("presidentList", presidentList);
 		return mv;
 	}
 

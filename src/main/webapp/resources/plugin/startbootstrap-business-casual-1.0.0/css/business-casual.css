@@ -6,7 +6,8 @@
 
 body {
     font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    background: url('../img/bg.jpg') no-repeat center center fixed;
+    /*background: url('../img/bg.jpg') no-repeat center center fixed;*/
+    background-color: #aaaaaa;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -145,7 +146,7 @@ footer p {
         font-size: 1.25em;
         font-weight: 400;
         letter-spacing: 3px;
-        color: #fff;
+        color: #000000;
     }
 
     .navbar {

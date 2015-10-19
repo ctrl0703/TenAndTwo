@@ -33,7 +33,7 @@
     <![endif]-->
     
     <style type="text/css">
-    	#title:link, #title:visited { color: #fff; text-decoration: none; }
+    	#title:link, #title:visited { color: #000; text-decoration: none; }
     	#title:hover { text-decoration: underline; }
     	.brand { position: relative; }
     	#loginBtn {
@@ -99,7 +99,7 @@
     </nav>
 
     <!-- jQuery -->
-    <script src="resources/plugin/startbootstrap-business-casual-1.0.0/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath }/resources/plugin/startbootstrap-business-casual-1.0.0/js/jquery.js"></script>
 </body>
 <script type="text/javascript">
 $(function() {
